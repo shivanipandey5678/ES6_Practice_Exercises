@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es6</title>
+</head>
+<body>
+    <script>
+
+        //<-------CALL BACK HLL EXAMPLE --------------------->
+        // fetch('https://fakestoreapi.com/products')
+        // .then((res)=>{
+        //     return res.json()
+        // }).then((finalres)=>{
+        //     console.log(finalres)
+        // })
+
+
+
+       //<------- ASYNC AWAIT EXAMPLE BY ARROW FUNCTION --------------------->
+        // const init =async ()=>{
+        //     let rawdata= await fetch('https://fakestoreapi.com/products');
+        //     let mydata=await rawdata.json();
+        //     console.log(mydata)
+        // }   
+        // init()
+
+      //<------- EXAMPLE  ARROW FUNCTION --------------------->
+
+        // const foo=(()=>{
+        //     return "foo";
+        // });
+        // let ans=foo();
+        // console.log(ans)
+
+
+        //<------- EXAMPLE RETURNING PROMISE --------------------->
+
+        function product(){
+            return new Promise(function(resolve,reject){
+                setTimeout(function(){
+                   resolve({id:9877,name:"shibu",class:"12"});
+                },2000);
+            })
+        }
+        async function foo2(){
+            try {
+                let data3=await product();
+                console.log(data3);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        foo2()
+
+     
+        //<------- EXAMPLE  implicit return --------------------->
+
+        const ans2=()=>5;
+        let final=ans2();
+        console.log(final)
+
+       //<------- EXAMPLE2  --------------------->
+    //    const sum=(a,b)=>{return a+b};
+    //    let result=sum(7,5);
+    //    console.log(result)
+
+
+     //<------- EXAMPLE3  implicit return  MORE SHORT WAY TO DO SAME THING--------------------->
+    const sum=(a,b)=> a+b;
+    console.log(sum(8,7))
+    </script>
+</body>
+</html>
